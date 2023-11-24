@@ -1,27 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@layer base {
+  html, body {
+    @apply w-[100%] h-screen text-black m-0 p-0 bg-white;
+  }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  ::selection {
+    @apply bg-orange-400 bg-opacity-20 text-orange-400;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+  *,
+  *::before
+  *::after {
+    @apply box-border text-gray-700 border-[rgba(212,228,254,.191)];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  p[data-role="nav-item"] {
+    @apply transition-all duration-100 relative;
+  }
+
+  p[data-role="nav-item"]::after {
+    @apply transition-all duration-300 content-[''] w-0 block absolute bottom-[3px] h-[1px] bg-black opacity-40 rounded-full;
+  }
+
+  p[data-role="nav-item"].active {
+    @apply font-normal;
+  }
+
+  p[data-role="nav-item"].active::after,p[data-role="nav-item"]:hover::after {
+    @apply w-full;
+  }
 }
