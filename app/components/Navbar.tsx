@@ -26,13 +26,25 @@ const Navbar = ({ setPage }: any) => {
         if (!index) return;
     }, [path, navbar]);
 
+    function handleClick(index: number) {
+        window.history.replaceState(
+            {},
+            pages[index] + '',
+            `/${pages[index].page}`
+        );
+        setPage(index);
+    }
+
     return (
         <nav
             ref={navbar}
             className="h-full left-0 flex flex-col w-[25rem] gap-[2rem] justify-center items-center border-r border-slate-700 border-opacity-5"
         >
             {pages.map((page, i) => (
-                <button key={i} onClick={() => setPage(i)}>
+                <button
+                    key={i}
+                    onClick={() => handleClick(i)}
+                >
                     <p
                         data-role="nav-item"
                         className={`text-lg font-light ${
