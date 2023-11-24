@@ -1,15 +1,15 @@
 [
     {
+        "text": "Domov",
+        "page": ""
+    },
+    {
         "text": "Kto sme?",
         "page": "about"
     },
     {
         "text": "Predošlé práce",
         "page": "portfolio"
-    },
-    {
-        "text": "Čistá fantázia",
-        "page": "fantazia"
     },
     {
         "text": "Kontakt",

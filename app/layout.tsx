@@ -1,9 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Josefin_Sans } from 'next/font/google';
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import { createContext, useContext } from 'react';
 
 const font = Josefin_Sans({ subsets: ['latin'] });
 

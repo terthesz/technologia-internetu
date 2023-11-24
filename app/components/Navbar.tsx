@@ -32,14 +32,11 @@ const Navbar = ({ setPage }: any) => {
             className="h-full left-0 flex flex-col w-[25rem] gap-[2rem] justify-center items-center border-r border-slate-700 border-opacity-5"
         >
             {pages.map((page, i) => (
-                <button
-                    key={i}
-                    onClick={() => setPage(i + 1)}
-                >
+                <button key={i} onClick={() => setPage(i)}>
                     <p
                         data-role="nav-item"
                         className={`text-lg font-light ${
-                            currentPage === i + 1
+                            currentPage === i
                                 ? 'active'
                                 : ''
                         }`}

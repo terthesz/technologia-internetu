@@ -15,7 +15,7 @@ const page = ({ params }: { params: { act: string } }) => {
                           'Čistáaaa fantáaaazia',
                           'Napíšte nám',
                           'Ritmus',
-                      ][page - 1]
+                      ][page]
                     : 'Domov'}
             </h1>
         </div>
