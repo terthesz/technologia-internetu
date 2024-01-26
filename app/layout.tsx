@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Josefin_Sans } from 'next/font/google';
@@ -23,6 +24,8 @@ export default function RootLayout({
         <div className="flex flex-col absolute w-full h-full top-0 left-0">
           {children}
         </div>
+
+        <Toaster />
       </body>
     </html>
   );

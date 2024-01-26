@@ -18,17 +18,24 @@ import {
   DialogClose,
   DialogFooter,
 } from '@/components/ui/dialog';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function ProductForm({
   dialogClose,
 }: {
   dialogClose: Function;
 }) {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof buySchema>>({
     resolver: zodResolver(buySchema),
   });
 
   function onSubmit(values: z.infer<typeof buySchema>) {
+    toast({
+      title: 'Objednane',
+      description: 'Super duper objednavka hotova',
+    });
     dialogClose();
   }
 
