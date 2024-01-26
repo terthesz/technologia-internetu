@@ -89,7 +89,7 @@
   }
 
   p[data-role="nav-item"]::after {
-    @apply transition-all duration-300 content-[''] w-0 block absolute bottom-[3px] h-[1px] bg-black opacity-40 rounded-full;
+    @apply transition-all duration-300 content-[''] w-0 block absolute bottom-[5px] h-[1px] bg-black opacity-40 rounded-full;
   }
 
   p[data-role="nav-item"].active {
