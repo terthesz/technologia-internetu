@@ -67,10 +67,36 @@
 }
  
 @layer base {
-  * {
-    @apply border-border;
+  html, body {
+    @apply w-[100%] h-screen text-black m-0 p-0 bg-white;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  ::selection {
+    @apply bg-orange-400 bg-opacity-20 text-orange-400;
+  }
+
+
+  *,
+  *::before
+  *::after {
+    @apply box-border text-gray-700 border-[rgba(212,228,254,.191)];
+  }
+}
+
+@layer components {
+  p[data-role="nav-item"] {
+    @apply transition-all duration-100 relative;
+  }
+
+  p[data-role="nav-item"]::after {
+    @apply transition-all duration-300 content-[''] w-0 block absolute bottom-[3px] h-[1px] bg-black opacity-40 rounded-full;
+  }
+
+  p[data-role="nav-item"].active {
+    @apply font-normal;
+  }
+
+  p[data-role="nav-item"].active::after,p[data-role="nav-item"]:hover::after {
+    @apply w-full;
   }
 }
